@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="CSS Files\mentee_style.css">
+<link rel="stylesheet" href="CSS Files\login_style.css">
+<link rel="stylesheet" href="CSS Files\mentor_style.css">
+<link rel="stylesheet" href="CSS Files\general.css">
+
+<body class=dragonBackground>
+
+<div class="grid">
+    <h1 div class="center_container2 item1">
+        <img src="Photos\EPIC DRAGON.png" class="img_style">
+        Mentoring101
+    </h1>
+    <div class="accountBackround roundCorners1"></div>
+    <div class="item2"><img src="Photos\Profile Pic.jpg" class="imgStyle"> </div>
+    <div class="item3"><h3> User_name </h3> </div>
+    <div class="item4">Points: 
+    <div class="upvotes roundCorners1">69</div> 
+    </div>
+    <div class="item5 logout " onclick = "window.location.href = 'login.html'">Logout</div>
+</div>
+
+<div class="bigFlex">
+
+    <div class = "right loginBackround roundCorners1">
+        <div ><h2 class="top"> Search for your mentors </h2></div>
+        <form action="" class="searchGrid">  
+           <div class="address"> Address: <input type="text" name="address" placeholder="Address" size="50"> </div>
+           <div class="jobCategory">  Job Category: <input type="text" name="Job Category" placeholder="Job Category"> </div>
+           <div> Company Name: <input  type="text" name="Company Name" placeholder="Company Name"> </div>
+           <div>  Skills: <input type="text" name="Skills" placeholder="Comma Separated"> </div>
+             <div> Review Scores:  <input type="range" min="0" max="5" value="5" id="myRange" name="ReviewScore">
+                   Value: <span id="demo"></span>
+
+                   <script>
+                        var slider = document.getElementById("myRange");
+                        var output = document.getElementById("demo");
+                        output.innerHTML = slider.value;
+                        
+                        slider.oninput = function() {
+                        output.innerHTML = this.value;
+                        }
+                    </script>
+            </div>
+               
+            
+            
+            <input type="submit" value="Search" class="acceptButton search">  
+        </form>
+    </div>
+
+    <div class = "left_mentorsForYou loginBackround roundCorners1">
+        <h2> Mentors for you</h2>
+
+        <div class="meetingContainer">
+
+            <!-- DUMMY CHARACTERS -->
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Walter.png" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Walter H. White</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                 
+                </div>
+            </div>
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Jesse.png" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Jesse Pinkman</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Gus.webp" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Gustavo Fring</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Saul.png" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Saul Goodman</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Mike.png" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Mike Ehrmantraut</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Hector.jpeg" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Hector Salamanca</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+            <div class="mentorForYouGrid slotBackround">
+                <div class="divImg"><img src="Photos\Hank.png" class="mentorImg"></div>
+                <div class="cornersNameMentor roundCorners1" style="font-size: large;"><b>Hank Schrader</b></div>
+                <button class=" betterButtons acceptButton acceptPos" > Enrol </button>
+                <button class="betterButtons denyButton denyPos" > Hide</button>
+                <div class="timeDateList">
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">1/1 1:00</div>
+                    <div class="timeDateItem">16/10 17:23</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                    <div class="timeDateItem">16/10 17:20</div>
+                
+                </div>
+            </div>
+
+             <!-- DUMMY CHARACTERS -->
+        </div>
+      
+    </div>
+
+    <div class = "left_mentorsForYou loginBackround roundCorners1">
+        <h2>Your requests</h2>
+        <!-- DUMMY CHARACTERS-->
+        <div class="meetingContainer">
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Walter White    </div>
+            <div class="descritpion"> Let's Cook</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+
+                <div class="timeDateItem">1/1 1:00</div> <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> PENDING</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                PENDING
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> Stop selling Marijuana to my husband</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> Stop selling Marijuana to my husband</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> Stop selling Marijuana to my husband</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> Stop selling Marijuana to my husband</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div> 
+                <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Saul Goodman    </div>
+            <div class="descritpion"> PENDING</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                PENDING
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> Stop selling Marijuana to my husband</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+                <div class="timeDateItem">1/1 1:00</div>
+            </div>  
+        </div>
+
+        <div class="yourRequestEntry">
+            <div class="yourRequestsName roundCorners1">  Skyler White    </div>
+            <div class="descritpion"> PENDING</div>
+            <button class=" betterButtons acceptButton acceptPos" > Accept </button>
+            <button class="betterButtons denyButton1 denyPos" > Cancel</button>
+            <div class="timeDateList2" >
+                PENDING
+            </div>  
+        </div>
+
+        
+
+        <!-- DUMMY CHARACTERS-->
+    </div>
+    </div>
+
+
+</div>
+
+</body>

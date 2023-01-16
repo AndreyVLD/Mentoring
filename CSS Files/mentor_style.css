@@ -1,0 +1,338 @@
+.flexContainer{
+    display: flex;   
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto 69px 130px 100px;
+    grid-template-rows: 50px 15px;
+    gap: 10px;
+    background-image: linear-gradient(120deg, #419527 0%, #afde71 100%);
+    padding: 10px;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+.item2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: right;
+    z-index: 3;
+}
+
+.item3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: left;
+    z-index: 3;
+}
+
+.item4{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start:2 ;
+    grid-row-end:3 ;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -10px;
+    z-index: 3;
+
+}
+
+.item5{
+    grid-column-start: 6;
+    grid-column-end:7 ;
+    grid-row-start:2 ;
+    grid-row-end:3 ;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+}
+
+
+.styleDate{
+    border-radius:10px;
+    border-color: greenyellow;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.614);
+}
+
+.imgStyle{
+    height: 69px;
+    border-radius: 10%;
+    border:#380d09;
+    border-style: groove;
+}
+
+.center_container2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 0%;
+}
+
+.upvotes{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    color:black;
+    font-size: 15px;
+    border:2px solid rgb(0, 0, 0);
+    width: fit-content;
+    margin-left:5px;
+    align-self:flex-start;
+    padding: 1px;
+}
+
+.logout {
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:7px 25px;
+	text-shadow:0px 1px 0px #810e05;
+    width: fit-content;
+    align-self:center;
+    margin-top: -10px;
+    margin-left: -4px;
+}
+.logout:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+.logout:active {
+	position:relative;
+	top:1px;
+}
+
+.accountBackround{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 4/7;
+    grid-row:1/5 ;
+    background-color: rgba(148, 116, 68, 0.664);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.roundCorners1{
+    border-radius: 10px;
+}
+
+.yourTimeSlots{
+    text-align: left;
+    vertical-align: top;
+    width: 442px;
+    margin:auto;
+
+}
+
+.timeSlots{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+
+.input{
+   display: flex;
+   flex-direction: row;
+   font-size: 19px;
+   font-weight: bold;
+   z-index: 2;
+   align-items: center;
+}
+
+.cancelButton {
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:0px 3px;
+	text-shadow:0px 1px 0px #810e05;
+    height: fit-content;
+    margin-bottom: -1px;
+    
+}
+.cancelButton:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+
+.corners{
+    border: 2px solid;
+    width: 60px;
+    height: fit-content;
+    margin-right: 5%;
+    margin-bottom: -1px;
+    margin-top: -1px;
+    padding:3px;
+}
+
+.corners:hover{
+    background-color: #419527;
+}
+
+.date{
+    margin-left: 5px;
+}
+
+
+.slotBackround{
+    background-color: rgba(179, 172, 99, 0.664);
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 3px
+    
+}
+
+.bigGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    justify-content: space-evenly;
+}
+
+.meetingRequests{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
+
+.timeSlot{
+    grid-column-start:1;
+    grid-column-end:1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+   
+}
+
+.timeSlotViewer{
+    grid-column-start:1;
+    grid-column-end:1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    
+}
+
+.cornersName{
+    border: 2px solid;
+    width: fit-content;
+    width: 150px;
+    height: fit-content;
+    margin-right: 3%;
+    margin-bottom: -1px;
+    margin-top: -1px;
+    padding:3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+
+}
+
+.cornersName:hover{
+    background-color: #419527;
+}
+
+.meetingContainer{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 800px;
+}
+
+.description{
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: 0.6;
+}
+
+.description:hover{
+    opacity: 1;
+}
+
+.description:focus{
+    opacity: 1;
+}
+
+.formRequests{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+
+.dropDownMenu{
+    min-width: 90px;
+}
+
+.acceptButton {
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	background-color:#77d42a;
+	border-radius:19px;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+    margin-left: 15px;
+}
+.acceptButton:hover {
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	background-color:#5cb811;
+}
+
+.denyButton{
+
+    box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:linear-gradient(to bottom, #ed6565 5%, #b81111 100%);
+	background-color:#d42a2a;
+	border-radius:19px;
+	display:inline-block;
+	cursor:pointer;
+	color:#610808;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+    margin-left: 45px;
+
+}
+
+.denyButton:hover {
+	background:linear-gradient(to bottom, #b81111 5%, #d42a2a 100%);
+	background-color:#b81111;
+}

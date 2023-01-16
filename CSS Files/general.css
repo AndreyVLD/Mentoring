@@ -1,0 +1,116 @@
+.roundCorners {
+    border-radius: 5px;
+}
+
+.marginsLeft {
+    margin-left: 30px;
+}
+
+.marginsRight {
+    margin-right: 30px;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_sex{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.center1 {
+    border: 4px solid;
+    margin:auto;
+    width:fit-content;
+    align-self: center;
+    text-align: center;
+}
+
+.center2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.centerNoBorder {
+    margin:auto;
+    width:fit-content;
+    align-self: center;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+
+.left1 {
+    border: 4px solid;
+    width:fit-content;
+    align-self: left;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+
+.right{
+    border: 4px solid;
+    width:fit-content;
+    align-self: right;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+
+}
+
+.leftNoBorder {
+    width:fit-content;
+    align-self: left;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+
+.left2 {
+    border: 4px solid;
+    width:fit-content;
+    align-self: left;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+
+.left {
+    position:relative;
+    left: 60px;
+    
+}
+
+*{
+    scrollbar-width: auto;
+    scrollbar-color: #66a12b #a3b59b;
+}
+
+*::-webkit-scrollbar {
+    width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #a3b59b;
+
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #66a12b;
+    border-radius: 18px;
+    border: 0px none #972187;
+}
+
+*::-webkit-scrollbar-thumb:vertical:hover{
+    background-color:#3f3f3f
+}
+  

@@ -1,0 +1,294 @@
+div {
+    margin-bottom: 20px;
+}
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+}
+.label1 {
+    display: inline-block;
+    width: 150px;
+    text-align: left;   
+}
+
+.session {
+    border: 1px solid green;
+    margin: auto;
+    width: fit-content;
+    align-self: left;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+}
+
+.dragonBackground {
+    background-attachment: fixed;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.loginBackround{
+    background-image: linear-gradient(120deg, #d4fc79 0%, #ffffff88 100%);
+}
+
+.img_style{
+    width: 100px; 
+    height: 69px; 
+}
+
+.center_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.spacing{
+    margin-top: 5%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: right;
+
+}
+
+textarea{
+    resize: none;
+}
+
+.font_style{
+    font-size: 26px;
+}
+
+.margin{
+    margin-right: -21.5%;
+}
+
+.button1 {
+    color: #000000;
+    background-color: #3eb00c;
+    font-size: 15px;
+    border: 2px solid #000000;
+    padding: 10px 30px;
+    cursor: pointer
+    
+}
+.button1:hover {
+    color: #ffffff;
+    background-color: #0dc991;
+}
+
+.left_mentorsForYou{
+    border: 4px solid;
+    width:fit-content;
+    max-width: 820px;
+    padding: 20px;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.searchGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+}
+.formRequestsMentee {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding-bottom: 2.5%;
+}
+.address{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end:3;
+}
+
+.jobCategory{
+    grid-row-start:2;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end:2;
+}
+
+.search{
+    grid-column: 2;
+}
+
+.mentorImg{
+    height:100px;
+    max-width: 78px;
+    border-radius: 10%;
+    border:#380d09;
+    border-style: groove;
+}
+
+.divImg{
+    grid-column:1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.cornersNameMentor{
+    grid-row : 1;
+    grid-column: 2;
+    border: 2px solid;
+    width: 150px;
+    height: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding:3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+
+}
+
+.betterButtons{
+    height: 35px
+}
+
+.timeDateList{
+    grid-row: 2;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    background-color: #d4fc79;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.mentorForYouGrid{
+    display: grid;
+    grid-template-columns: 80px auto auto;
+    grid-template-rows: 40px 70px ;
+}
+
+input{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.acceptPos{
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.denyPos{
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.timeDateItem{
+    border: 2px solid;
+    width: fit-content;
+    min-width: 80px;
+    margin:2px;
+    margin-left: 3px;
+    padding:3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+    align-self: flex-start;
+    background-color: #ffffff;
+
+}
+
+.timeDateItem:hover{
+    background-color: #419527;
+}
+
+.bigFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.yourRequestEntry{
+    display: grid;
+    grid-template-columns: 170px auto 90px 90px;
+    grid-template-rows:auto auto;
+    font-size: 18;
+    font-weight: bold;
+}
+
+.descritpion{
+    border-radius: 10px;
+    border: 2px solid;
+    max-width: 470px;
+    max-height: 17px;
+    height: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding:3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+
+}
+
+.yourRequestsName{
+    grid-row : 1;
+    grid-column: 1;
+    border: 2px solid;
+    width: 150px;
+    height: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding:3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.denyButton1{
+
+    box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:linear-gradient(to bottom, #ed6565 5%, #b81111 100%);
+	background-color:#d42a2a;
+	border-radius:19px;
+	display:inline-block;
+	cursor:pointer;
+	color:#610808;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+    margin-left: 15px;
+    margin-right: 5px;
+
+}
+
+.denyButton1:hover{
+    background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+
+.timeDateList2{
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    background-color: #d4fc79;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+
