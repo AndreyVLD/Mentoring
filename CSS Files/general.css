@@ -113,4 +113,18 @@
 *::-webkit-scrollbar-thumb:vertical:hover{
     background-color:#3f3f3f
 }
+
+.verify{
+    text-align: left;
+    font-size: small;
+    margin-left: 5%;
+}
+
+.error{
+    color:red;
+}
+
+.correct{
+    color:#66a12b;
+}
   
