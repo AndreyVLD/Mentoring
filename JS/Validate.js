@@ -7,14 +7,18 @@ function validateForm(){
 }
 
 function validateUserName(username){
-    if(username==""){
-        
+    const regex = new RegExp('');
+    if(username=="" || ! regex.test(username)){
+        document.getElementById("unError").classList.remove('correct');
         document.getElementById("unError").classList.add('error');
         document.getElementById("unError").innerHTML = "The user name is required!";
+        return false;
     }
     else{
+        document.getElementById("unError").classList.remove('error');
+        document.getElementById("unError").classList.add('correct');
         document.getElementById("unError").innerHTML = "Everything looks great!";
-        document.getElementById("unError").classList.replace('error','correct');
+        return true;
     }
 
 }
