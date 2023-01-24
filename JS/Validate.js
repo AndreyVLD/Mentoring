@@ -110,7 +110,7 @@ function validateSkill(skills,isMentor){
         return true;
     }else if(!(format)){
         unhide("skillError",isMentor);
-        incorrectInput("skillError","The skills must be separated by commas with no space!",isMentor);
+        incorrectInput("skillError","The skills must be separated by commas with no space and may only contain letters!",isMentor);
         return false;
     }else{
         unhide("skillError",isMentor);
@@ -311,6 +311,10 @@ function validatePassword(password, confirmPassword, isMentor){
         size = false;
     else{
         for(let i = 0; i<password.length; i++){
+          if(password.charAt(i)<'!'){
+                format = false;
+                break;
+            }
             if(password.charAt(i) >= 'A' && password.charAt(i) <= 'Z')
                 upr = true;
             else
@@ -359,18 +363,35 @@ function validatePassword(password, confirmPassword, isMentor){
 }
 
 function validateUserName(username, isMentor){
-    let size = /^\S{5,12}$/;
-    let first = /^[A-Z]/;
-    let last  = /[^A-Za-z]{1}$/;
+    let size = true;                          // /^\S{5,12}$/;
+    let first = true;                          // /^[A-Z]/;
+    let last  = true;                         //  /[^A-Za-z]{1}$/;
+
+    let special ="1234567890!@#$%^&*()_+}{|:?><~`][';/.,=-";
+
+    if(username.length <5 || username.length > 12)
+        size = false;
+    else{
+        if(username.charAt(0)<'A' || username.charAt(0)>'Z')
+            first = false;
+
+        if(!special.includes(username.charAt(username.length-1)))
+            last = false;
+
+        for(let i = 0; i<username.length;i++)
+            if(username.charAt(i)<'!')
+                first = false;
+    }
+
     if(username==""){
         incorrectInput("unError","Username is required!",isMentor);
         return false;
     }
-    else if(! size.test(username)){
+    else if(! size){
         incorrectInput("unError","Username must be of length 5 to 12!",isMentor);
         return false;
 
-    }else if(! (first.test(username) && last.test(username))){
+    }else if(! (first && last)){
         incorrectInput("unError","Username must start with capital letter and end with a number or special character!",isMentor);
         return false;
     }
