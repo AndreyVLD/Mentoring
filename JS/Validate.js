@@ -21,8 +21,23 @@ function validateForm(){
     let validLanguage = validateLanguage(lang);
     let validBio =  validateBio(bio);
 
-
+    if(validUserName && validPassword && validName && validAddres && validCountry
+        && validZip && validEmail && validSex && validLanguage && validBio )
+        {
+            alert("Your input stated by the alert:" 
+             + "\nUsername: " + uid
+             + "\nPassword: " + pas
+             +  "\nName: "+ nam
+             + "\nCountry: " + cutr
+             + "\nAddress: " + adr
+             + "\nZIP Code: " +zip
+             + "\nEmail: " + mail
+             + "\nSex: " + sex
+             + "\nLanguage: " + lang
+             + "\nBio: " + bio);
+        }
 }
+
 function validateBio(bio){
     if(bio == ""){
         hide("bioError");
@@ -84,8 +99,7 @@ function validateEmail(email, confirmEmail){
 function validateZip(zip){
     let format = /^[0-9]{4}[A-Za-z]{2}$/;
     if(zip==""){
-        incorrectInput("zipError","ZIP Code is required!");
-        return false;
+        return true;
     }else if(!(format.test(zip))){
         incorrectInput("zipError", "ZIP Code has four numbers followed by two letters!");
         return false;
