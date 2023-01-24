@@ -26,24 +26,31 @@ function showDiv() {
     let skills = 0;
     let c_name = 0;
     let job_category = 0;
+    let path;
 
-    skills = document.getElementById("skills").value.length;
-    c_name = document.getElementById("comapny_name").value.length;
-    job_category = document.getElementById("job_category").job_category.value.length;
+    if(document.title == "Mentor"){
 
-    const username = document.user_name.value;
-    const password1 = document.password.value;
-    const password2 = document.confirm_password.value;
-    const address = document.adress.value;
-    const zip = document.zipcode.value;
-    const email1 = document.email.value;
-    const email2 = document.confirm_email.value;
-    const language = document.Language.value;
-    const bio = document.bio.value;    
+        skills = document.getElementById("skills").value.length;
+        c_name = document.getElementById("comapny_name").value.length;
+        job_category = document.getElementById("job_category").value.length;
+        path = "mentorForm";
+    }else{
+        path = "menteeForm";
+    }
 
-    const totalCharacters = username.length + password1.length + password2.length +
-                        address.length + zip.length + email1.length + email2.length +
-                        language.length + bio.length + skills + c_name + job_category;
+    const username = document.getElementById(path).user_name.value;
+    const password1 = document.getElementById(path).password.value;
+    const password2 = document.getElementById(path).confirm_password.value;
+    const address = document.getElementById(path).adress.value;
+    const zip = document.getElementById(path).zipcode.value;
+    const email1 = document.getElementById(path).email.value;
+    const email2 = document.getElementById(path).confirm_email.value;
+    const language = document.getElementById(path).Language.value;
+    const bio = document.getElementById(path).bio.value;    
+
+   const totalCharacters = username.length + password1.length + password2.length +
+                     address.length + zip.length + email1.length + email2.length +
+                     language.length + bio.length + skills + c_name + job_category;
     
     const end = new Date().getTime();
     const totalTime = (end - start) / 1000;
