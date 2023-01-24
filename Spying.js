@@ -27,27 +27,19 @@ function showDiv() {
     let c_name = 0;
     let job_category = 0;
 
-    let path;
+    skills = document.getElementById("skills").value.length;
+    c_name = document.getElementById("comapny_name").value.length;
+    job_category = document.getElementById("job_category").job_category.value.length;
 
-    if(document.contains("menteeForm"))
-        path = "menteeForm"
-    else
-        if(document.contains("mentorForm")){
-            path = "mentorForm";
-            skills = document.path.skills.value.length;
-            c_name = document.path.comapny_name.value.length;
-            job_category = document.path.job_category.value.length;
-        }
-
-    const username = document.path.user_name.value;
-    const password1 = document.path.password.value;
-    const password2 = document.path.confirm_password.value;
-    const address = document.path.adress.value;
-    const zip = document.path.zipcode.value;
-    const email1 = document.path.email.value;
-    const email2 = document.path.confirm_email.value;
-    const language = document.path.Language.value;
-    const bio = document.path.bio.value;    
+    const username = document.user_name.value;
+    const password1 = document.password.value;
+    const password2 = document.confirm_password.value;
+    const address = document.adress.value;
+    const zip = document.zipcode.value;
+    const email1 = document.email.value;
+    const email2 = document.confirm_email.value;
+    const language = document.Language.value;
+    const bio = document.bio.value;    
 
     const totalCharacters = username.length + password1.length + password2.length +
                         address.length + zip.length + email1.length + email2.length +
