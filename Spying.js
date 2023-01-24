@@ -1,8 +1,5 @@
 
-
 let buttonHome = document.querySelector("body");
-if(buttonHome ==  null)
-    buttonHome = document.querySelector('#mentorBody');
 let CountButtonHomeClicks = 0;
 
 buttonHome.addEventListener("click", function() {
