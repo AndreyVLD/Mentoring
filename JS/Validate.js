@@ -10,16 +10,16 @@ function validateForm(){
     let lang = document.MenteeForm.Language.value;
     let bio = document.MenteeForm.bio.value;
 
-    let validUserName = validateUserName(uid);
-    let validPassword =  validatePassword(pas, confPass);
-    let validName = validateName(nam);
-    let validAddres = validateAddres(adr);
-    let validCountry = validateCountry(cutr);
-    let validZip = validateZip(zip);
-    let validEmail = validateEmail(mail,cmail);
-    let validSex = validateSex(sex);
-    let validLanguage = validateLanguage(lang);
-    let validBio =  validateBio(bio);
+    let validUserName = validateUserName(uid,false);
+    let validPassword =  validatePassword(pas, confPass,false);
+    let validName = validateName(nam,false);
+    let validAddres = validateAddres(adr,false);
+    let validCountry = validateCountry(cutr,false);
+    let validZip = validateZip(zip,false);
+    let validEmail = validateEmail(mail,cmail,false);
+    let validSex = validateSex(sex,false);
+    let validLanguage = validateLanguage(lang,false);
+    let validBio =  validateBio(bio,false);
 
     if(validUserName && validPassword && validName && validAddres && validCountry
         && validZip && validEmail && validSex && validLanguage && validBio )
@@ -38,196 +38,297 @@ function validateForm(){
         }
 }
 
-function validateBio(bio){
-    if(bio == ""){
-        hide("bioError");
+function validateFormMentor(){
+    let uid = document.MentorForm.user_name.value;
+    let nam = document.MentorForm.name.value;
+    let pas = document.MentorForm.password.value; let confPass = document.MentorForm.confirm_password.value;
+    let adr = document.MentorForm.adress.value;
+    let cutr = document.MentorForm.country.value;
+    let zip = document.MentorForm.zipcode.value;
+    let mail = document.MentorForm.email.value; let cmail = document.MentorForm.confirm_email.value;
+    let sex = document.MentorForm.sex_option.value; 
+    let lang = document.MentorForm.Language.value;
+    let bio = document.MentorForm.bio.value;
+    let jbc = document.MentorForm.job_category.value;
+    let skl = document.MentorForm.skills.value;
+    let cmp = document.MentorForm.company_name.value;
+
+    let validUserName = validateUserName(uid,true);
+    let validPassword =  validatePassword(pas, confPass,true);
+    let validName = validateName(nam,true);
+    let validAddres = validateAddres(adr,true);
+    let validCountry = validateCountry(cutr,true);
+    let validZip = validateZip(zip,true);
+    let validEmail = validateEmail(mail,cmail,true);
+    let validSex = validateSex(sex,true);
+    let validLanguage = validateLanguage(lang,true);
+    let validBio =  validateBio(bio,true);
+    let validJob = validateJob(jbc,true);
+    let validSkill = validateSkill(skl,true);
+    let validCompany = validateComapny(cmp,true);
+
+    if(validUserName && validPassword && validName && validAddres && validCountry
+        && validZip && validEmail && validSex && validLanguage && validBio 
+        && validJob && validSkill && validCompany)
+        {
+            alert("Your input stated by the alert:" 
+             + "\nUsername: " + uid
+             + "\nPassword: " + pas
+             +  "\nName: "+ nam
+             + "\nCountry: " + cutr
+             + "\nAddress: " + adr
+             + "\nZIP Code: " +zip
+             + "\nEmail: " + mail
+             + "\nSex: " + sex
+             + "\nLanguage: " + lang
+             + "\nBio: " + bio
+             + "\nJob: " + jbc
+             + "\nSkills: " + skl
+             + "\nCompany: " + cmp);
+        }
+}
+
+function validateComapny(company,isMentor){
+    if(company == ""){
+        incorrectInput("companyError","Company field is required!", isMentor)
+        return false;
     }else{
-        unhide("bioError");
+        correctInput("companyError",isMentor);
+        return true;
     }
-    correctInput("bioError");
+}
+
+function validateSkill(skills,isMentor){
+    let format = /^[A-Za-z,]*$/;
+    if(skills == ""){
+        hide("skillError",isMentor);
+        return true;
+    }else if(!(format.test(skills))){
+        unhide("skillError",isMentor);
+        incorrectInput("skillError","The skills must be separated by commas with no space!",isMentor);
+        return false;
+    }else{
+        unhide("skillError",isMentor);
+        correctInput("skillError",isMentor);
+        return true;
+    }
+}
+
+function validateJob(job, isMentor){
+    let format = /^[A-Za-z]*$/;
+    if(job == ""){
+        incorrectInput("jobError","Job field is required",isMentor);
+        return false;
+    }else if(!(format.test(job))){
+        incorrectInput("jobError","Job may only contain letters",isMentor);
+        return false;
+    }{
+        correctInput("jobError",isMentor);
+        return true;
+    }
+}
+
+function validateBio(bio,isMentor){
+    if(bio == ""){
+        hide("bioError",isMentor);
+    }else{
+        unhide("bioError",isMentor);
+    }
+    correctInput("bioError",isMentor);
     return true;
 }
 
 
-function validateLanguage(language){
+function validateLanguage(language, isMentor){
     let format = /^[A-Za-z]*$/;
     if(language == ""){
-        incorrectInput("languageError","Language is required!");
+        incorrectInput("languageError","Language is required!",isMentor);
         return false;
     }else if(!(format.test(language))){
-        incorrectInput("languageError","Language may only contain letters!");
+        incorrectInput("languageError","Language may only contain letters!",isMentor);
         return false;
     }else{
-        correctInput("languageError");
+        correctInput("languageError",isMentor);
         return true;
     }
 }
 
-function validateSex(sex){
+function validateSex(sex, isMentor){
     if(sex !=  "Female" && sex != "Male"){
-        incorrectInput("sexError","You must pick an option!");
+        incorrectInput("sexError","You must pick an option!",isMentor);
         return false;
     }else{
-        correctInput("sexError");
+        correctInput("sexError",isMentor);
         return true;
     }
 }
 
-function validateEmail(email, confirmEmail){
+function validateEmail(email, confirmEmail, isMentor){
     let format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(email == ""){
-        hide("confEmailError");
-        incorrectInput("emailError","Email is required!");
+        hide("confEmailError",isMentor);
+        incorrectInput("emailError","Email is required!",isMentor);
         return false;
     }else if(!(format.test(email))){
-        hide("confEmailError");
-        incorrectInput("emailError","This is not a valid Email!");
+        hide("confEmailError",isMentor);
+        incorrectInput("emailError","This is not a valid Email!",isMentor);
         return false;
     }else if(email != confirmEmail){
-        incorrectInput("confEmailError","The Emails do not match!");
-        unhide("confEmailError");
-        correctInput("emailError");
+        incorrectInput("confEmailError","The Emails do not match!",isMentor);
+        unhide("confEmailError",isMentor);
+        correctInput("emailError",isMentor);
         return false;
     }else{
-        unhide("confEmailError");
-        correctInput("emailError");
-        correctInput("confEmailError");
+        unhide("confEmailError",isMentor);
+        correctInput("emailError",isMentor);
+        correctInput("confEmailError",isMentor);
         return true;
     }
 }
 
-function validateZip(zip){
+function validateZip(zip, isMentor){
     let format = /^[0-9]{4}[A-Za-z]{2}$/;
     if(zip==""){
         return true;
     }else if(!(format.test(zip))){
-        incorrectInput("zipError", "ZIP Code has four numbers followed by two letters!");
+        incorrectInput("zipError", "ZIP Code has four numbers followed by two letters!",isMentor);
         return false;
     }else{
-        correctInput("zipError");
+        correctInput("zipError",isMentor);
         return true;
     }
 } 
 
 
-function validateCountry(country){
+function validateCountry(country, isMentor){
     let format = /^[A-Za-z]*$/;
     if(country == ""){
-        incorrectInput("countryError","Country is required!");
+        incorrectInput("countryError","Country is required!",isMentor);
         return false;
     }
     else if(!(format.test(country))){
-        incorrectInput("countryError","Country may only contain alphabet!");
+        incorrectInput("countryError","Country may only contain alphabet!",isMentor);
         return false;
     }else{
-        correctInput("countryError");
+        correctInput("countryError",isMentor);
         return true;
     }
 }
 
 
-function validateAddres(addres){
+function validateAddres(addres, isMentor){
     if(addres==""){
-        hide("addressError");
+        hide("addressError",isMentor);
     }else{
-        unhide("addressError");
+        unhide("addressError",isMentor);
     }
-    correctInput("addressError");
+    correctInput("addressError",isMentor);
     return true;
 }
 
-function validateName(name){
+function validateName(name, isMentor){
     let format = /^[A-Za-z]*$/;
     if(name == ""){
-        incorrectInput("nameError","Name is required!");
+        incorrectInput("nameError","Name is required!",isMentor);
         return false;
     }else if(!(format.test(name))){
-        incorrectInput("nameError","Name must contain only alphabet!")
+        incorrectInput("nameError","Name must contain only alphabet!",isMentor)
         return false;
     }else{
-        correctInput("nameError");
+        correctInput("nameError",isMentor);
         return true;
     }
 }
 
-function validatePassword(password, confirmPassword){
+function validatePassword(password, confirmPassword, isMentor){
     let size = /^\S{12,}$/;
     let format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
     if(password==""){
-        hide("passConfError");
-        incorrectInput("passError","Password is required!");
+        hide("passConfError",isMentor);
+        incorrectInput("passError","Password is required!",isMentor);
         return false;
 
     }else if(! size.test(password)){
-        hide("passConfError");
-        incorrectInput("passError","Password must be at least 12 characters long!");
+        hide("passConfError",isMentor);
+        incorrectInput("passError","Password must be at least 12 characters long!",isMentor);
         return false;
 
     }
     else if(! (format.test(password))){
 
-        incorrectInput("passError","Password must containt at least: 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character!");
-        hide("passConfError");
+        incorrectInput("passError","Password must containt at least: 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character!",isMentor);
+        hide("passConfError",isMentor);
         return false;
 
     }else if(password != confirmPassword){
-        unhide("passConfError");
-        correctInput("passError");
-        incorrectInput("passConfError","Passwords do not match!");
+        unhide("passConfError",isMentor);
+        correctInput("passError",isMentor);
+        incorrectInput("passConfError","Passwords do not match!",isMentor);
         return false;
 
     }else{
-        unhide("passConfError");
-        correctInput("passError");
-        correctInput("passConfError");
+        unhide("passConfError",isMentor);
+        correctInput("passError",isMentor);
+        correctInput("passConfError",isMentor);
         return true;
 
     }
 }
 
-function validateUserName(username){
+function validateUserName(username, isMentor){
     let size = /^\S{5,12}$/;
     let first = /^[A-Z]/;
     let last  = /[^A-Za-z]{1}$/;
     if(username==""){
-        incorrectInput("unError","Username is required!");
+        incorrectInput("unError","Username is required!",isMentor);
         return false;
     }
     else if(! size.test(username)){
-        incorrectInput("unError","Username must be of length 5 to 12!");
+        incorrectInput("unError","Username must be of length 5 to 12!",isMentor);
         return false;
 
     }else if(! (first.test(username) && last.test(username))){
-        incorrectInput("unError","Username must start with capital letter and end with a number or special character!");
+        incorrectInput("unError","Username must start with capital letter and end with a number or special character!",isMentor);
         return false;
     }
     else{
-        correctInput("unError");
+        correctInput("unError",isMentor);
         return true;
     }
 
 }
 
-function correctInput(divN){
+function correctInput(divN, isMentor){
+    if(isMentor == true){
+        divN =  divN.concat("M");
+    }
     document.getElementById(divN).innerHTML = "Looks good!";
     document.getElementById(divN).classList.remove('error');
     document.getElementById(divN).classList.add('correct');
     
 }
 
-function incorrectInput(divN, message){
+function incorrectInput(divN, message, isMentor){
+    if(isMentor == true){
+       divN =  divN.concat("M");
+    }
     document.getElementById(divN).innerHTML = message;
     document.getElementById(divN).classList.remove('correct');
     document.getElementById(divN).classList.add('error');
 }
 
-function hide(divN){
+function hide(divN, isMentor){
+    if(isMentor == true){
+        divN =  divN.concat("M");
+    }
     document.getElementById(divN).classList.remove('unhide');
     document.getElementById(divN).classList.add('hide');
 }
 
-function unhide(divN){
+function unhide(divN, isMentor){
+    if(isMentor == true){
+        divN =  divN.concat("M");
+    }
     document.getElementById(divN).classList.add('unhide');
     document.getElementById(divN).classList.remove('hide');
 }
-
