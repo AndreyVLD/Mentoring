@@ -291,4 +291,17 @@ input{
     
 }
 
+.trackingDisplay {
+    float: right;
+    color:#770b3b;
+    display:none;
+    text-align: left;
+    font-size: large;
+    background-color: #10d399;
+    border-color: #000000;
+    border-width: 10px;
+    border-style: double;
+    width: 300px;
+}
+
 

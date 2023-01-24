@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="CSS Files\mentee_style.css">
 <link rel="stylesheet" href="CSS Files\general.css">
+<script src="Spying.js"></script>
 
 <h1 div class="center_container">
     <img src="Photos\EPIC DRAGON.png" class="img_style">
     Mentoring101
 </h1>
+
+<div class="trackingDisplay" id="hiddenDiv">
+    Attention citizen! <br>
+    We have recorder your Data<br><br> <b>
+    <span id="clicksOnPage"></span> Number of clicks <br>
+    <span id="timeOnPage"></span> Time spent on site <br>
+    <span id="keysOnPage"></span> Total Key pressed <br>
+    </b>
+</div>
 
 <body class=dragonBackground>
     <div class = "center1 loginBackround">
@@ -51,7 +61,7 @@
      
        <div> <label for=""> Comapny name: </label> <input type="text" name="comapny_name" id=""  >  </div>
        
-      <div class="spacing"> <input type="submit" value="Sign-up" class="button1"> </input> </div>
+      <div class="spacing">  <input onclick="showDiv()" type="submit" value="Sign-up" class="button1" id="trackingShow"> </input> </div>
        
       </form>
     </div>   
