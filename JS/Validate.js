@@ -99,11 +99,16 @@ function validateComapny(company,isMentor){
 }
 
 function validateSkill(skills,isMentor){
-    let format = /^[A-Za-z,]*$/;
+    let format = true;                                      // /^[A-Za-z,]*$/
+    for(let i = 0; i < skills.length; i++)
+        if(skills.charAt(i)!= ',' && (skills.charAt(i)<'A' || skills.charAt(i)>'z' || (skills.charAt(i) > 'Z' && skills. charAt(i)<'a' ))){
+            format = false;
+        }
+
     if(skills == ""){
         hide("skillError",isMentor);
         return true;
-    }else if(!(format.test(skills))){
+    }else if(!(format)){
         unhide("skillError",isMentor);
         incorrectInput("skillError","The skills must be separated by commas with no space!",isMentor);
         return false;
@@ -115,11 +120,16 @@ function validateSkill(skills,isMentor){
 }
 
 function validateJob(job, isMentor){
-    let format = /^[A-Za-z]*$/;
+    let format = true;                                        // /^[A-Za-z]*$/;
+
+    for(let i = 0; i<job.length; i++)
+        if(job.charAt(i) < 'A' || job.charAt(i) > 'z' || (job.charAt(i) > 'Z' && job. charAt(i)<'a' ) )
+            format = false;
+
     if(job == ""){
         incorrectInput("jobError","Job field is required!",isMentor);
         return false;
-    }else if(!(format.test(job))){
+    }else if(!(format)){
         incorrectInput("jobError","Job may only contain letters!",isMentor);
         return false;
     }{
@@ -140,11 +150,16 @@ function validateBio(bio,isMentor){
 
 
 function validateLanguage(language, isMentor){
-    let format = /^[A-Za-z]*$/;
+    let format = true;                                   // /^[A-Za-z]*$/;
+
+    for(let i = 0; i<language.length; i++)
+        if(language.charAt(i) < 'A' || language.charAt(i) > 'z' || (language.charAt(i) > 'Z' && language. charAt(i)<'a' ))
+            format = false;
+
     if(language == ""){
         incorrectInput("languageError","Language is required!",isMentor);
         return false;
-    }else if(!(format.test(language))){
+    }else if(!(format)){
         incorrectInput("languageError","Language may only contain letters!",isMentor);
         return false;
     }else{
@@ -164,12 +179,37 @@ function validateSex(sex, isMentor){
 }
 
 function validateEmail(email, confirmEmail, isMentor){
-    let format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let format = true;                             // /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let allowed = "QWERTYUIOPASDFGHJKLZXCVVBNMqwerryuiopasdfghjklmnbvcxz1234567890._-@";
+    let points = 0;
+    let ats = 0;
+    for(let i = 0; i < email.length; i++){
+        if(email.charAt(i)=='@')
+            ats++;
+
+        if(email.charAt(i)=='.')
+            points++;
+
+        if(!(allowed.includes(email.charAt(i)))){
+            format = false;
+            break;
+        }
+    }
+
+    let indexP = email.indexOf(".");
+    let indexAt = email.indexOf("@");
+
+    if(indexAt ==-1 || indexP ==-1 || indexAt > indexP 
+        || indexP-indexAt <= 1 || ats!=1 || points !=1 
+        || indexAt == 0 || indexP >= email.length - 2){
+            format = false;
+        }
+
     if(email == ""){
         hide("confEmailError",isMentor);
         incorrectInput("emailError","Email is required!",isMentor);
         return false;
-    }else if(!(format.test(email))){
+    }else if(!(format)){
         hide("confEmailError",isMentor);
         incorrectInput("emailError","This is not a valid Email!",isMentor);
         return false;
@@ -187,10 +227,22 @@ function validateEmail(email, confirmEmail, isMentor){
 }
 
 function validateZip(zip, isMentor){
-    let format = /^[0-9]{4}[A-Za-z]{2}$/;
+    let format = true;                                  // /^[0-9]{4}[A-Za-z]{2}$/;
+
+    if(zip.length != 6)
+        format = false;
+    else{
+        for(let i = 0; i < 4 ; i++)
+            if(zip.charAt(i)<'0' || zip.charAt(i)>'9')
+                format = false;
+        for(let i = 4; i<=5; i++)
+            if(zip.charAt(i) < 'A' || zip.charAt(i) > 'z' || (zip.charAt(i) > 'Z' && zip. charAt(i)<'a' ) )
+                format = false;
+    }
+    
     if(zip==""){
         return true;
-    }else if(!(format.test(zip))){
+    }else if(!(format)){
         incorrectInput("zipError", "ZIP Code has four numbers followed by two letters!",isMentor);
         return false;
     }else{
@@ -201,12 +253,17 @@ function validateZip(zip, isMentor){
 
 
 function validateCountry(country, isMentor){
-    let format = /^[A-Za-z]*$/;
+    let format = true;                                  // /^[A-Za-z]*$/;
+
+    for(let i = 0; i < country.length; i++)
+        if(country.charAt(i) < 'A' || country.charAt(i) > 'z' || (country.charAt(i) > 'Z' && country. charAt(i)<'a' ) )
+            format = false;
+
     if(country == ""){
         incorrectInput("countryError","Country is required!",isMentor);
         return false;
     }
-    else if(!(format.test(country))){
+    else if(!(format)){
         incorrectInput("countryError","Country may only contain alphabet!",isMentor);
         return false;
     }else{
@@ -227,11 +284,16 @@ function validateAddres(addres, isMentor){
 }
 
 function validateName(name, isMentor){
-    let format = /^[A-Za-z]*$/;
+    let format = true;                                  //^[A-Za-z]*$/;
+
+    for(let i = 0; i < name.length; i++)
+        if(name.charAt(i) < 'A' || name.charAt(i) > 'z' || (name.charAt(i) > 'Z' && name. charAt(i)<'a' ) )
+            format = false;
+
     if(name == ""){
         incorrectInput("nameError","Name is required!",isMentor);
         return false;
-    }else if(!(format.test(name))){
+    }else if(!(format)){
         incorrectInput("nameError","Name must contain only alphabet!",isMentor)
         return false;
     }else{
@@ -241,20 +303,41 @@ function validateName(name, isMentor){
 }
 
 function validatePassword(password, confirmPassword, isMentor){
-    let size = /^\S{12,}$/;
-    let format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
+    let format = true;                                      //  /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
+    let size = true;
+    let upr=false; let lwr=false; let sp=false; let num=false;
+
+    if(password.length < 12)
+        size = false;
+    else{
+        for(let i = 0; i<password.length; i++){
+            if(password.charAt(i) >= 'A' && password.charAt(i) <= 'Z')
+                upr = true;
+            else
+                if(password.charAt(i) >= 'a' && password.charAt(i) <= 'z')
+                    lwr = true;
+                else
+                    if(password.charAt(i) >= '0' && password.charAt(i) <='9')
+                        num = true;
+                    else
+                        if(password.charAt(i) >= '!')
+                            sp=true;
+        }
+    }
+    format = sp && num && lwr && upr;
+
     if(password==""){
         hide("passConfError",isMentor);
         incorrectInput("passError","Password is required!",isMentor);
         return false;
 
-    }else if(! size.test(password)){
+    }else if(! size ){
         hide("passConfError",isMentor);
         incorrectInput("passError","Password must be at least 12 characters long!",isMentor);
         return false;
 
     }
-    else if(! (format.test(password))){
+    else if(! format){
 
         incorrectInput("passError","Password must containt at least: 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character!",isMentor);
         hide("passConfError",isMentor);
