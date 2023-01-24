@@ -122,9 +122,19 @@
 
 .error{
     color:red;
+    margin-top: -15px;
 }
 
 .correct{
-    color:#66a12b;
+    color:#024d18;
+    margin-top: -15px;
+}
+
+.hide{
+    display: none;
+}
+
+.unhide{
+    display: block;
 }
   
