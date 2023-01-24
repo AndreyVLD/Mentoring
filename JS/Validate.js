@@ -117,10 +117,10 @@ function validateSkill(skills,isMentor){
 function validateJob(job, isMentor){
     let format = /^[A-Za-z]*$/;
     if(job == ""){
-        incorrectInput("jobError","Job field is required",isMentor);
+        incorrectInput("jobError","Job field is required!",isMentor);
         return false;
     }else if(!(format.test(job))){
-        incorrectInput("jobError","Job may only contain letters",isMentor);
+        incorrectInput("jobError","Job may only contain letters!",isMentor);
         return false;
     }{
         correctInput("jobError",isMentor);
