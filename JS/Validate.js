@@ -1,15 +1,30 @@
 function validateForm(){
     let uid = document.MenteeForm.user_name.value;
-
-    let validUserName = validateUserName(uid);
-
+    let nam = document.MenteeForm.name.value;
     let pas = document.MenteeForm.password.value;
     let confPass = document.MenteeForm.confirm_password.value;
 
+    let validUserName = validateUserName(uid);
     let validPassword =  validatePassword(pas, confPass);
+    let validName = validateName(nam);
+    
 
-    let nam = document.MenteeForm.name.value;
 
+
+}
+
+function validateName(name){
+    let format = /^[A-Za-z]*$/;
+    if(name == ""){
+        incorrectInput("nameError","Name is required!");
+        return false;
+    }else if(!(format.test(name))){
+        incorrectInput("nameError","Name must contain only alphabet!")
+        return false;
+    }else{
+        correctInput("nameError");
+        return true;
+    }
 }
 
 
