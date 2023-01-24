@@ -5,6 +5,10 @@ function validateForm(){
     let adr = document.MenteeForm.adress.value;
     let cutr = document.MenteeForm.country.value;
     let zip = document.MenteeForm.zipcode.value;
+    let mail = document.MenteeForm.email.value; let cmail = document.MenteeForm.confirm_email.value;
+    let sex = document.MenteeForm.sex_option.value; 
+    let lang = document.MenteeForm.Language.value;
+    let bio = document.MenteeForm.bio.value;
 
     let validUserName = validateUserName(uid);
     let validPassword =  validatePassword(pas, confPass);
@@ -12,9 +16,69 @@ function validateForm(){
     let validAddres = validateAddres(adr);
     let validCountry = validateCountry(cutr);
     let validZip = validateZip(zip);
+    let validEmail = validateEmail(mail,cmail);
+    let validSex = validateSex(sex);
+    let validLanguage = validateLanguage(lang);
+    let validBio =  validateBio(bio);
 
 
+}
+function validateBio(bio){
+    if(bio == ""){
+        hide("bioError");
+    }else{
+        unhide("bioError");
+    }
+    correctInput("bioError");
+    return true;
+}
 
+
+function validateLanguage(language){
+    let format = /^[A-Za-z]*$/;
+    if(language == ""){
+        incorrectInput("languageError","Language is required!");
+        return false;
+    }else if(!(format.test(language))){
+        incorrectInput("languageError","Language may only contain letters!");
+        return false;
+    }else{
+        correctInput("languageError");
+        return true;
+    }
+}
+
+function validateSex(sex){
+    if(sex !=  "Female" && sex != "Male"){
+        incorrectInput("sexError","You must pick an option!");
+        return false;
+    }else{
+        correctInput("sexError");
+        return true;
+    }
+}
+
+function validateEmail(email, confirmEmail){
+    let format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email == ""){
+        hide("confEmailError");
+        incorrectInput("emailError","Email is required!");
+        return false;
+    }else if(!(format.test(email))){
+        hide("confEmailError");
+        incorrectInput("emailError","This is not a valid Email!");
+        return false;
+    }else if(email != confirmEmail){
+        incorrectInput("confEmailError","The Emails do not match!");
+        unhide("confEmailError");
+        correctInput("emailError");
+        return false;
+    }else{
+        unhide("confEmailError");
+        correctInput("emailError");
+        correctInput("confEmailError");
+        return true;
+    }
 }
 
 function validateZip(zip){
