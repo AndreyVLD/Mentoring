@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="CSS Files\mentee_style.css">
 <link rel="stylesheet" href="CSS Files\general.css">
+<script src="JS\Validate.js"></script>
 
 <h1 div class="center_container">
     <img src="Photos\EPIC DRAGON.png" class="img_style">
@@ -14,44 +15,79 @@
         <div class="font_style"><u> Sign-up as Mentor </u> </div>
 
     <div class="container ">  
-     <form target="_blank" action="mentorMain.html">
-       <div> <label for=""> Username: </label> <input type="text" name="name" id="" required >  </div>
+     <form name = "MentorForm">
+       <div> <label for=""> Username: </label> <input type="text" name="user_name" id=""  >  </div>
+
+       <div id="unErrorM" class="verify"></div>
       
-       <div> <label for=""> Password: </label> <input type="password" name="password" id="" required >  </div>
+       <div> <label for=""> Password: </label> <input type="password" name="password" id=""  >  </div>
+
+       <div id="passErrorM" class="verify"></div>
                
-       <div> <label for=""> Confirm Password:</label> <input type="password" name="confirm_password" id="" required >  </div>
+       <div> <label for=""> Confirm Password:</label> <input type="password" name="confirm_password" id=""  >  </div>
+
+       <div id="passConfErrorM" class="verify"></div>
+
+       <div> <label for=""> Name:</label> <input type="text" name="name" id=""  >  </div>
+
+       <div id="nameErrorM" class="verify"></div>
+
+       <div> <label for=""> Country:</label> <input type="text" name="country" id="" >  </div>
+
+       <div id="countryErrorM" class="verify"></div>
                
-       <div> <label for=""> Address:</label> <input type="text" name="adress" id="" required >  </div>
+       <div> <label for=""> Address:</label> <input type="text" name="adress" id="">  </div>
+
+       <div id="addressErrorM" class="verify"></div>
        
-       <div> <label for=""> ZIP Code:</label> <input type="text" name="zipcode" id="" required pattern="[0-9]{4}[A-Za-z]{2}" >  </div>
+       <div> <label for=""> ZIP Code:</label> <input type="text" name="zipcode" id="" >  </div> <!-- pattern="[0-9]{4}[A-Za-z]{2}" -->
+
+       <div id="zipErrorM" class="verify"></div>
        
-       <div> <label for=""> Email:</label> <input type="email" name="email" id="" required>  </div>
+       <div> <label for=""> Email:</label> <input type="email" name="email" id="" >  </div>
+
+       <div id="emailErrorM" class="verify"></div>
        
-       <div> <label for=""> Confirm Email:</label> <input type="email" name="confirm_email" id="" required>  </div>
+       <div> <label for=""> Confirm Email:</label> <input type="email" name="confirm_email" id="" >  </div>
+
+       <div id="confEmailErrorM" class="verify"></div>
                
-        <div class="right_sex">  <input name="sex_option" type="radio" value="Male" required /> <label class="label1" >Male</label>
+        <div class="right_sex">  <input name="sex_option" type="radio" value="Male"  /> <label class="label1" >Male</label>
         <br>
-        <input name="sex_option" type="radio" value="Female" /> <label class="label1" required >Female</label>
-       
+        <input name="sex_option" type="radio" value="Female" /> <label class="label1"  >Female</label>
         </div>
+
+        <div id="sexErrorM" class="verify"></div>
        
-       <div> <label for=""> Language:</label> <input type="text" name="Language" id="" required pattern="[A-Za-z]+" >  </div>
+       <div> <label for=""> Language:</label> <input type="text" name="Language" id=""   >  </div> <!--pattern="[A-Za-z]+"-->
+
+       <div id="languageErrorM" class="verify"></div>
         
-       <div > <label for="" class=""> Bio:</label>  <textarea name="bio" id="" required cols="18" rows ="3" ></textarea>  </div>
+       <div > <label for="" class=""> Bio:</label>  <textarea name="bio" id="" cols="18" rows ="3" ></textarea>  </div>
+
+       <div id="bioErrorM" class="verify"></div>
        
-       <div class="margin"> <label for=""> Profile Picture: </label> <input type="file" name="picture" id="" required accept=".png, .jpeg">  </div>
+       <div class="margin"> <label for=""> Profile Picture: </label> <input type="file" name="picture" id="" accept=".png, .jpeg">  </div>
       
-       <div> <label for=""> Job Category: </label> <input type="text" name="job_category" id="" required >  </div>
+       <div> <label for=""> Job Category: </label> <input type="text" name="job_category" id=""  >  </div>
+
+       <div id="jobErrorM" class="verify"></div>
        
-       <div> <label for=""> Skills: </label> <input type="text" name="skills" id="" required placeholder="comma separated">  </div>
+       <div> <label for=""> Skills: </label> <input type="text" name="skills" id=""  placeholder="comma separated">  </div>
      
-       <div> <label for=""> Comapny name: </label> <input type="text" name="comapny_name" id="" required >  </div>
+       <div id="skillErrorM" class="verify"></div>
+
+       <div> <label for=""> Company name: </label> <input type="text" name="company_name" id=""  >  </div>
        
-       All fields are mandatory!
-      <div class="spacing"> <input type="submit" value="Sign-up" class="button1"> </input> </div>
+       <div id="companyErrorM" class="verify"></div>
+
+      <div class="spacing"> 
+            <button type="button"class="button1" onclick="validateFormMentor()"> Sign-up </button> 
+      </div>
        
       </form>
     </div>   
     </h4>     
 </div>
 </body>
+

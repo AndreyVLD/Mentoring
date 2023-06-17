@@ -26,9 +26,9 @@
         <div ><h2 class="top"> Search for your mentors </h2></div>
         <form action="" class="searchGrid">  
            <div class="address"> Address: <input type="text" name="address" placeholder="Address" size="50"> </div>
-           <div class="jobCategory">  Job Category: <input type="text" name="Job Category" placeholder="Job Category"> </div>
+           <div class="jobCategory">  Job Category: <input type="text" name="Job Category" placeholder="Job Category" pattern="[A-Za-z]+"> </div>
            <div> Company Name: <input  type="text" name="Company Name" placeholder="Company Name"> </div>
-           <div>  Skills: <input type="text" name="Skills" placeholder="Comma Separated"> </div>
+           <div>  Skills: <input type="text" name="Skills" placeholder="Comma Separated" pattern="[A-Za-z,]+"> </div>
              <div> Review Scores:  <input type="range" min="0" max="5" value="5" id="myRange" name="ReviewScore">
                    Value: <span id="demo"></span>
 
