@@ -1,6 +1,6 @@
 # Mentoring
-Mentoring
-This is  a mentoring app that enables youth and students to connect with online
+
+This is a mentoring app that enables youth and students to connect with online
 mentors for assistance with various issues, such as mental stress or academic support.
 
 Project requirements:
